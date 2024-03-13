@@ -22,14 +22,6 @@ def generate_tarot_reading():
     # Number of cards to include in the reading (you can adjust this)
     num_cards = 3
     
-    tarot_deck = {
-        "Card1": "Interpretation 1 for Card 1",
-        "Card2": "Interpretation 2 for Card 2",
-        "Card3": "Interpretation 3 for Card 3",
-        # Add more cards and interpretations as needed
-    }
-    print(type(deck[0])) #deck is a list of dictionaries
-
     tarot_deck = deck
     
     chosen_deck = []
