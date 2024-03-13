@@ -52,14 +52,17 @@ def generate_tarot_reading():
     print(deck[0]['interpretation'])
     selected_cards = []
     interpretations = []
+    descriptions = []
     for i in range(num_cards):
         selected_cards.insert(i,deck[i]['name'])
         interpretations.insert(i,deck[i]['interpretation'])
+        descriptions.insert(i,deck[i]['description'])
     # Retrieve interpretations for the selected cards
     #interpretations = [tarot_deck[card] for card in selected_cards]
     # Return the Tarot reading as JSON data
     response = {
         "cards": selected_cards,
+        "descriptions": descriptions,
         "interpretations": interpretations,
     }
     return jsonify(response)

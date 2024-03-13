@@ -8,7 +8,10 @@
 }
 
 
-
+ul {
+  font-size: 15px;
+  list-style-type: none;
+}
 .App-header {
   background-color: #000000;
   min-height: 100vh;

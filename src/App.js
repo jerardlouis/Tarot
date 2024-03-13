@@ -49,7 +49,8 @@ function App() {
               {tarotReading.cards.map((card, index) => (
                 <li key={index}>
                   <strong>Card:</strong> {card} <br />
-                  <strong>Interpretation:</strong> {tarotReading.interpretations[index]}
+                  <strong>Description:</strong> {tarotReading.descriptions[index]}  <br />
+                  <strong>Interpretation:</strong> {tarotReading.interpretations[index]}  <br />
                 </li>
               ))}
             </ul>
