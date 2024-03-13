@@ -8,7 +8,7 @@ function App() {
   const fetchTarotReading = async () => {
     try {
       console.log('here');
-      const response = await fetch('/api/tarot-reading'); // Replace with your API endpoint
+      const response = await fetch('/api/tarot-reading'); 
       if (!response.ok) {
         console.log(response);
         throw new Error('Failed to fetch Tarot reading');
