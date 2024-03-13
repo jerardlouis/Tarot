@@ -41,7 +41,7 @@ function App() {
               ))}
             </ul>
             AI Interpretation: <br />
-            <small><smaller><smaller>{tarotReading.reading}</smaller></smaller></small>
+            <small>{tarotReading.reading}</small>
           </div>
         )}
       </header>
