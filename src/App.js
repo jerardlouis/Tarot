@@ -21,18 +21,6 @@ function App() {
     }
   };
 
-  const test = async () => {
-    try {
-      console.log('testing route');
-      const response = await fetch('/test');
-      if (!response.ok) {
-        console.log(response);
-        throw new Error('Failed to fetch API');
-      }
-    } catch (error) {
-      console.error('Cannot read: ', error);
-    }
-  }
 
   return (
     <div className="App">

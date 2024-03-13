@@ -11,11 +11,6 @@ app = Flask(__name__, static_folder='./build/static')
 def index(filename):
     return send_from_directory('./build', filename)
 
-@app.route('/test', methods=['GET'])
-def test():
-    response = make_response('test response')
-    return response
-
 @app.route('/api/tarot-reading', methods=['GET'])
 def generate_tarot_reading():
 
