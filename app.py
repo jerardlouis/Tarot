@@ -48,15 +48,17 @@ def generate_tarot_reading():
     
     # Select a random set of cards for the reading
     selected_cards = shuffled_deck[:num_cards]"""
-    print(deck[0]['name'])
-    print(deck[0]['interpretation'])
+    chosen_deck = []
+    for i in range(num_cards):
+        chosen_deck.insert(i,deck[random.randrange(78)])
+    print(chosen_deck)
     selected_cards = []
     interpretations = []
     descriptions = []
     for i in range(num_cards):
-        selected_cards.insert(i,deck[i]['name'])
-        interpretations.insert(i,deck[i]['interpretation'])
-        descriptions.insert(i,deck[i]['description'])
+        selected_cards.insert(i,chosen_deck[i]['name'])
+        interpretations.insert(i,chosen_deck[i]['interpretation'])
+        descriptions.insert(i,chosen_deck[i]['description'])
     # Retrieve interpretations for the selected cards
     #interpretations = [tarot_deck[card] for card in selected_cards]
     # Return the Tarot reading as JSON data
