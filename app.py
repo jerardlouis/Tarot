@@ -2,6 +2,7 @@ import os
 import random
 from flask import Flask, send_from_directory, jsonify, make_response
 import json
+import gpt
 
 app = Flask(__name__, static_folder='./build/static')
 
@@ -27,7 +28,7 @@ def get_cards():
     chosen_deck = []
     for i in range(num_cards):
         chosen_deck.insert(i,deck[random.randrange(78)])
-    print(chosen_deck)
+    #print(chosen_deck)
     selected_cards = []
     interpretations = []
     descriptions = []
@@ -53,6 +54,8 @@ def get_cards():
         "interpretations": interpretations,
         "reversed": reversed,
     }
+    print(response)
+    #print(gpt.test())
     return jsonify(response)
 
 app.run(
