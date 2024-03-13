@@ -42,7 +42,7 @@ function App() {
                 </li>
               ))}
             </ul>
-
+            AI Interpretation: <br />
             <small><smaller><smaller>{tarotReading.reading}</smaller></smaller></small>
           </div>
         )}
