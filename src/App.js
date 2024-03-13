@@ -42,6 +42,8 @@ function App() {
                 </li>
               ))}
             </ul>
+
+            <small><smaller><smaller>{tarotReading.reading}</smaller></smaller></small>
           </div>
         )}
       </header>

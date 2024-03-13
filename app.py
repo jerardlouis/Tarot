@@ -2,7 +2,7 @@ import os
 import random
 from flask import Flask, send_from_directory, jsonify, make_response
 import json
-import gpt
+import AI
 
 app = Flask(__name__, static_folder='./build/static')
 
@@ -48,14 +48,19 @@ def get_cards():
             card_status = 'Not Reversed'
         reversed.insert(i,card_status)
 
+    reading = AI.reading(chosen_deck)
+
     response = {
         "cards": selected_cards,
         "descriptions": descriptions,
         "interpretations": interpretations,
         "reversed": reversed,
+        "reading": reading,
     }
+    #print(response)
+    #print(AI.test()) #Send the response here
+    #print(AI.reading(chosen_deck))
     print(response)
-    #print(gpt.test())
     return jsonify(response)
 
 app.run(
