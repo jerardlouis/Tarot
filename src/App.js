@@ -35,10 +35,8 @@ function App() {
             <ul>
               {tarotReading.cards.map((card, index) => (
                 <li key={index}>
-                  <strong>Card:</strong> {card} <br />
-                  <strong>Card Orientation:</strong> {tarotReading.reversed[index]}  <br />
-                  <strong>Description:</strong> {tarotReading.descriptions[index]}  <br />
-                  <strong>Interpretation:</strong> {tarotReading.interpretations[index]}  <br />
+                  <strong>Card:</strong> {card} 
+                  <strong> Orientation:</strong> {tarotReading.reversed[index]}  <br />
                 </li>
               ))}
             </ul>
