@@ -1,22 +1,60 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+
 
 function App() {
+  const [tarotReading, setTarotReading] = useState(null);
+
+  const fetchTarotReading = async () => {
+    try {
+      console.log('here');
+      const response = await fetch('/api/tarot-reading'); // Replace with your API endpoint
+      if (!response.ok) {
+        console.log(response);
+        throw new Error('Failed to fetch Tarot reading');
+      }
+      const data = await response.json();
+      setTarotReading(data);
+      console.log(data);
+    } catch (error) {
+      console.error('Error fetching Tarot reading:', error);
+    }
+  };
+
+  const test = async () => {
+    try {
+      console.log('testing route');
+      const response = await fetch('/test');
+      if (!response.ok) {
+        console.log(response);
+        throw new Error('Failed to fetch API');
+      }
+    } catch (error) {
+      console.error('Cannot read: ', error);
+    }
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={"https://cdn11.bigcommerce.com/s-e62be/images/stencil/1280x1280/products/6749/11202/Midori091219-129__76162.1571069617.jpg?c=2"} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Welcome to TarotAI
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={fetchTarotReading}>Choose your fate</button>
+        {tarotReading && (
+          <div className="Tarot-Reading">
+            <h2>Your Tarot Reading</h2>
+            <ul>
+              {tarotReading.cards.map((card, index) => (
+                <li key={index}>
+                  <strong>Card:</strong> {card} <br />
+                  <strong>Interpretation:</strong> {tarotReading.interpretations[index]}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </header>
     </div>
   );
