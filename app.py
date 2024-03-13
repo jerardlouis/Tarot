@@ -12,7 +12,7 @@ def index(filename):
     return send_from_directory('./build', filename)
 
 @app.route('/api/tarot-reading', methods=['GET'])
-def generate_tarot_reading():
+def get_cards():
 
     
 
@@ -31,15 +31,27 @@ def generate_tarot_reading():
     selected_cards = []
     interpretations = []
     descriptions = []
+    reversed = []
     for i in range(num_cards):
+        likelihood_of_flip = random.randint(0,10)
+        if likelihood_of_flip <= 2:
+            is_flipped = 1
+        else:
+            is_flipped = 0
         selected_cards.insert(i,chosen_deck[i]['name'])
-        interpretations.insert(i,chosen_deck[i]['interpretation'])
+        interpretations.insert(i,chosen_deck[i]['interpretation'].split('Reversed:')[is_flipped])
         descriptions.insert(i,chosen_deck[i]['description'])
-    
+        if(is_flipped):
+            card_status = 'Reversed'
+        else:
+            card_status = 'Not Reversed'
+        reversed.insert(i,card_status)
+
     response = {
         "cards": selected_cards,
         "descriptions": descriptions,
         "interpretations": interpretations,
+        "reversed": reversed,
     }
     return jsonify(response)
 

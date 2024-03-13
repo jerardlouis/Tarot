@@ -7,7 +7,6 @@ function App() {
 
   const fetchTarotReading = async () => {
     try {
-      console.log('here');
       const response = await fetch('/api/tarot-reading'); 
       if (!response.ok) {
         console.log(response);
@@ -37,6 +36,7 @@ function App() {
               {tarotReading.cards.map((card, index) => (
                 <li key={index}>
                   <strong>Card:</strong> {card} <br />
+                  <strong>Card Orientation:</strong> {tarotReading.reversed[index]}  <br />
                   <strong>Description:</strong> {tarotReading.descriptions[index]}  <br />
                   <strong>Interpretation:</strong> {tarotReading.interpretations[index]}  <br />
                 </li>
