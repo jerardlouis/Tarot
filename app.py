@@ -21,14 +21,8 @@ def generate_tarot_reading():
 
     
 
-    """tarots = open(os.path.join('src',"Tarot.json"),"r")
-    json.loads(str(tarots))
-    print(str(tarots))"""
-
     with open('src/Tarot.json') as f:
         deck = json.load(f)
-        #print(deck)
-        #print(type(deck))
 
     # Number of cards to include in the reading (you can adjust this)
     num_cards = 3
@@ -40,14 +34,9 @@ def generate_tarot_reading():
         # Add more cards and interpretations as needed
     }
     print(type(deck[0])) #deck is a list of dictionaries
-    #tarot_deck = random.sample(set(deck.keys()), num_cards)
+
     tarot_deck = deck
-    """# Shuffle the Tarot deck
-    shuffled_deck = list(tarot_deck)
-    random.shuffle(shuffled_deck)
     
-    # Select a random set of cards for the reading
-    selected_cards = shuffled_deck[:num_cards]"""
     chosen_deck = []
     for i in range(num_cards):
         chosen_deck.insert(i,deck[random.randrange(78)])
@@ -59,9 +48,7 @@ def generate_tarot_reading():
         selected_cards.insert(i,chosen_deck[i]['name'])
         interpretations.insert(i,chosen_deck[i]['interpretation'])
         descriptions.insert(i,chosen_deck[i]['description'])
-    # Retrieve interpretations for the selected cards
-    #interpretations = [tarot_deck[card] for card in selected_cards]
-    # Return the Tarot reading as JSON data
+    
     response = {
         "cards": selected_cards,
         "descriptions": descriptions,
