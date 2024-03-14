@@ -43,6 +43,11 @@ button {
   font-weight: bold;
   font-style: italic;
 }
+button:hover {
+  transform: scale(1.2);
+  background-color: rgb(251, 2, 2, 0.5);
+  text-decoration: none!important;
+  }
 .App-link {
   color: #ff0000;
 }
