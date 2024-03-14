@@ -68,6 +68,7 @@ function App() {
           Welcome to TarotAI
         </p>
         <a><small>What would you like a reading on today?</small></a>
+        <br/>
         <button onClick={fetchTarotReadingLove} disabled={loading}>
           Love
           </button>

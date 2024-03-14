@@ -28,7 +28,15 @@ ul {
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+button {
+  width: auto;
+  color: white;
+  background-color: black;
+  box-shadow: 2px 2px white;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-style: italic;
+}
 .App-link {
   color: #ff0000;
 }
