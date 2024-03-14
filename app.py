@@ -1,6 +1,6 @@
 import os
 import random
-from flask import Flask, send_from_directory, jsonify, make_response
+from flask import Flask, send_from_directory, jsonify, request
 import json
 import AI
 
@@ -13,18 +13,16 @@ def index(filename):
     return send_from_directory('./build', filename)
 
 @app.route('/api/tarot-reading', methods=['GET'])
-def get_cards():
-
-    
-
+def get_cards():    
+    topic = request.headers.get("Content-Type")
     with open('src/Tarot.json') as f:
         deck = json.load(f)
 
     # Number of cards to include in the reading (you can adjust this)
-    num_cards = 8
+    num_cards = 3
     
     tarot_deck = deck
-    
+    print(len(deck))
     chosen_deck = []
     for i in range(num_cards):
         chosen_deck.insert(i,deck[random.randrange(78)])
@@ -35,7 +33,7 @@ def get_cards():
     reversed = []
     for i in range(num_cards):
         likelihood_of_flip = random.randint(0,20)
-        if likelihood_of_flip <= 3:
+        if likelihood_of_flip <= 4:
             is_flipped = 1
         else:
             is_flipped = 0
@@ -48,7 +46,7 @@ def get_cards():
             card_status = 'Not Reversed'
         reversed.insert(i,card_status)
 
-    reading = AI.reading(chosen_deck)
+    reading = AI.reading(chosen_deck, topic)
 
     response = {
         "cards": selected_cards,
