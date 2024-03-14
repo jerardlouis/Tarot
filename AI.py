@@ -13,8 +13,10 @@ def test():
     
 
 def reading(card_data):
-    prompt = "Given this python dictionary of tarot cards, please give me a reading about my future: " + str(card_data)
-
+    print("reading your fortune")
+    print(card_data)
+    prompt = "Given this python dictionary of tarot cards, please give me a reading about my future: " + str(card_data) + " Please refrain from using asterisks. Thank you!"
+    print(prompt)
     response = model.generate_content(prompt)
 
     return(response.text)
