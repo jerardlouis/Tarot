@@ -21,7 +21,7 @@ def get_cards():
         deck = json.load(f)
 
     # Number of cards to include in the reading (you can adjust this)
-    num_cards = 3
+    num_cards = 8
     
     tarot_deck = deck
     
@@ -34,8 +34,8 @@ def get_cards():
     descriptions = []
     reversed = []
     for i in range(num_cards):
-        likelihood_of_flip = random.randint(0,10)
-        if likelihood_of_flip <= 2:
+        likelihood_of_flip = random.randint(0,20)
+        if likelihood_of_flip <= 3:
             is_flipped = 1
         else:
             is_flipped = 0
