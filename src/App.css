@@ -1,14 +1,16 @@
 .App {
   text-align: center;
+  font-style: italic;
 }
-
+h2 {
+  font-weight: bolder;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 a {
   text-decoration: none;
-  font-style: italic;
   color: white;
 }
 small {
@@ -29,13 +31,15 @@ ul {
   color: white;
 }
 button {
-  width: auto;
+  padding: 10px;
+  width: 150px;
+  height:auto;
   color: white;
   background-color: black;
   box-shadow: 2px 2px white;
   border: 1px solid white;
   border-radius: 5px;
-  font-style: italic;
+  font-weight: bold;
 }
 .App-link {
   color: #ff0000;

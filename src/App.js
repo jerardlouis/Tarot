@@ -81,7 +81,7 @@ function App() {
         
         {loading ? <img src = {"https://i.pinimg.com/originals/fb/f4/b4/fbf4b4b5b982c142d6b25d8bf45daa40.gif"} alt="loading..." /> : tarotReading && (
           <div className="Tarot-Reading">
-            <h2>Your Tarot Reading</h2>
+            <h2><b>Your Tarot Reading</b></h2>
             <ul>
               {tarotReading.cards.map((card, index) => (
                 <li key={index}>
