@@ -41,6 +41,7 @@ button {
   border: 1px solid white;
   border-radius: 5px;
   font-weight: bold;
+  font-style: italic;
 }
 .App-link {
   color: #ff0000;
