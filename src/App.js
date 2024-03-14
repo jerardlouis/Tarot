@@ -51,7 +51,13 @@ function App() {
             <small>{tarotReading.reading}</small>
           </div>
         )}
+        <br/>
+        <a href="http://fathomless-bayou-60027.herokuapp.com/"><small>By Jerard Louis Dayanghirang Guevarra
+        <br/>
+        Click here to find me online!
+        </small></a>
       </header>
+      
     </div>
   );
 }

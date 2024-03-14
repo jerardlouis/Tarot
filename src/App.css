@@ -6,7 +6,11 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+a {
+  text-decoration: none;
+  font-style: italic;
+  color: white;
+}
 small {
   font-size: 15px;
 }
