@@ -58,7 +58,7 @@ def get_cards():
     #print(response)
     #print(AI.test()) #Send the response here
     #print(AI.reading(chosen_deck))
-    print(response)
+    #print(response)
     return jsonify(response)
 
 app.run(
