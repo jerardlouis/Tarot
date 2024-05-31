@@ -99,6 +99,7 @@ function App() {
         <br/>
         Click here to find me online!
         </small></a>
+        <small className="seo">An app by Jerard Louis Dayanghirang Guevarra, software engineer and musician. @jerardlouis Jerard Louis Dayanghirang Guevarra @jerardlouis </small>
       </header>
       
     </div>

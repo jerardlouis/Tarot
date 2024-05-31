@@ -16,6 +16,9 @@ a {
 small {
   font-size: 15px;
 }
+.seo {
+  color: black;
+}
 ul {
   font-size: 15px;
   list-style-type: none;
